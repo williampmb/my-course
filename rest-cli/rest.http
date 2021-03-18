@@ -1,2 +1,70 @@
-GET http://localhost:8080/api/v1/students/2
-Authorization: Basic user:bd809261-1aa7-4e25-a417-2f63bac34bd1
+### 
+#
+# HOW TO USE: Open with VS Code and install Rest Cli plugin.
+# It will show send request in each method after ###
+#
+###
+#
+# ana   - STUDENT
+# linda - ADMIN
+# tom   - ADMINTRAINEE
+
+############################################################
+############ ana DENNY AT /admin/api/** ####################
+############################################################
+
+###
+GET http://localhost:8080/api/v1/students/1
+Authorization: Basic ana:123
+
+
+############################################################
+################# tom ACCESS: GET ##########################
+############################################################
+
+###
+GET http://localhost:8080/admin/api/v1/students
+Authorization: Basic tom:123
+
+### SHOULD FAIL
+GET http://localhost:8080/admin/api/v1/students
+Authorization: Basic tom:123
+
+### SHOULD FAIL
+POST http://localhost:8080/admin/api/v1/students/
+Authorization: Basic tom:123
+Content-Type: application/json
+
+{
+    "id":10,
+    "name":"ali"
+}
+
+############################################################
+######### linda ACCESS: GET/POST/DELETE/PUT #################
+############################################################
+###
+POST http://localhost:8080/admin/api/v1/students/
+Authorization: Basic linda:123
+Content-Type: application/json
+
+{
+    "id":10,
+    "name":"ali"
+}
+
+
+###
+DELETE http://localhost:8080/admin/api/v1/students/1
+Authorization: Basic linda:123
+
+
+###
+PUT http://localhost:8080/admin/api/v1/students/1
+Authorization: Basic linda:123
+Content-Type: application/json
+
+{
+    "name":"ali"
+}
+############################################################
