@@ -1,14 +1,16 @@
 package com.login.service.mycourse.security;
 
+import static com.login.service.mycourse.security.UserPermission.COURSE_READ;
+import static com.login.service.mycourse.security.UserPermission.COURSE_WRITE;
+import static com.login.service.mycourse.security.UserPermission.STUDENT_READ;
+import static com.login.service.mycourse.security.UserPermission.STUDENT_WRITE;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.google.common.collect.Sets;
-
-import static com.login.service.mycourse.security.UserPermission.*;
 
 public enum UserRole {
 	STUDENT(Sets.newHashSet()),

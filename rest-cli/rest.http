@@ -15,7 +15,16 @@
 
 ###
 GET http://localhost:8080/api/v1/students/1
-Authorization: Basic ana:123
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsaW5kYSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJzdHVkZW50OndyaXRlIn0seyJhdXRob3JpdHkiOiJzdHVkZW50OnJlYWQifSx7ImF1dGhvcml0eSI6ImNvdXJzZTpyZWFkIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJjb3Vyc2U6d3JpdGUifV0sImlhdCI6MTYxNjE3NTczMSwiZXhwIjoxNjE3MzMyNDAwfQ.6OAtDpePNiJx5btbYdCjfTymI-N89WlvJ8DZzC7ng9GyBq1hiH89Vk04zn8IUjcA37CGAJGBO2smOWvi6ig2ig
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+     "username":"ana",
+     "password":"123"
+}
 
 
 ############################################################
@@ -24,7 +33,7 @@ Authorization: Basic ana:123
 
 ###
 GET http://localhost:8080/admin/api/v1/students
-Authorization: Basic tom:123
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsaW5kYSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJzdHVkZW50OndyaXRlIn0seyJhdXRob3JpdHkiOiJzdHVkZW50OnJlYWQifSx7ImF1dGhvcml0eSI6ImNvdXJzZTpyZWFkIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJjb3Vyc2U6d3JpdGUifV0sImlhdCI6MTYxNjE3NTczMSwiZXhwIjoxNjE3MzMyNDAwfQ.6OAtDpePNiJx5btbYdCjfTymI-N89WlvJ8DZzC7ng9GyBq1hiH89Vk04zn8IUjcA37CGAJGBO2smOWvi6ig2ig
 
 ### SHOULD FAIL
 GET http://localhost:8080/admin/api/v1/students
